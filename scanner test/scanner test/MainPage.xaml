@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxcm="clr-namespace:System.Security.Claims;assembly=System.Security.Claims"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             x:Class="scanner_test.MainPage"
+             >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Label
+            Grid.Row="0"
+            Grid.Column="1"
+            x:Name="CodeLabel"
+            Text="code goes here"
+            TextColor="Wheat"></Label>
+        
+        <zxing:ZXingScannerView
+            Grid.Column="1"
+            Grid.Row="1"
+            IsScanning="True"
+            x:Name="Scanner"
+            OnScanResult="Scanner_OnScanResult"
+            ></zxing:ZXingScannerView>
+    </Grid>
+</ContentPage>
